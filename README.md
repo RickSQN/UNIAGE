@@ -1,46 +1,35 @@
-sistema-agendamento/
-├── frontend/               # Tudo o que o fornecedor vê e interage na tela
-│   ├── assets/             # Imagens (como as logos do topo) e ícones
-│   ├── css/                # Arquivos de estilo (style.css para cores, botões laranja)
-│   ├── js/                 # Lógica da interface (script.js para ler a URL, calendário e requisições)
-│   └── index.html          # A estrutura principal da página e do formulário
-│
-├── backend/                # Lógica do servidor (caso não utilize exclusivamente o n8n)
-│   ├── src/                # Código-fonte da sua API
-│   │   ├── controllers/    # Funções que validam os horários livres e salvam os dados
-│   │   └── routes/         # Os caminhos da API (ex: POST /webhook/confirmar-agendamento)
-│   ├── .env                # Variáveis de ambiente (senhas e credenciais de banco de dados)
-│   └── server.js           # Arquivo principal que inicia o servidor
-│
-└── README.md               # Arquivo de texto com anotações e instruções do projeto
+# Sistema de Agendamento 📅
 
+Um sistema web completo para gestão e marcação de horários, composto por uma interface amigável para os fornecedores e uma API backend para validação e integração.
 
-sistema-cta/
-├── package.json            # Gerenciador do projeto (dependências do Electron e scripts de build)
-├── main.js                 # O "motor" do Electron que configura e abre a janela do aplicativo
-├── .env                    # Variáveis de ambiente (URL e chaves de acesso do Supabase)
-│
-├── src/                    # Pasta com todo o código visual e lógico do sistema
-│   ├── assets/             # Arquivos estáticos
-│   │   ├── img/            # Imagens gerais (logotipos, backgrounds)
-│   │   └── icons/          # Ícones da interface (menu, fechar, indicadores)
-│   │
-│   ├── css/                # O Design modularizado (View)
-│   │   ├── global.css      # Variáveis de cores padrão, fontes e reset de margens globais
-│   │   ├── layout.css      # Posicionamento da estrutura (Header, Sidebar, grid principal)
-│   │   ├── calendar.css    # Regras visuais exclusivas da tabela do calendário
-│   │   └── modal.css       # Estilização das telas sobrepostas (Adicionar/Modificar CTA)
-│   │
-│   ├── js/                 # A Inteligência do sistema (Controller/Model)
-│   │   ├── init.js         # Script principal (carrega dados do banco assim que o app abre)
-│   │   ├── ui.js           # Lógica de interface (abrir/fechar modais, interações de clique)
-│   │   │
-│   │   └── services/       # Integração com o exterior
-│   │       └── supabase.js # Funções exclusivas de banco de dados (Select, Insert, Update)
-│   │
-│   └── index.html          # A estrutura semântica da tela principal (Home) e do calendário
-│
-└── README.md               # Arquivo de texto para o seu controle de versão e anotações
+## 🚀 Funcionalidades
+- Interface interativa com calendário para seleção de datas e horários.
+- Validação de horários disponíveis em tempo real.
+- Integração via Webhooks para confirmação de agendamentos.
+- Design responsivo e focado na experiência do usuário.
 
+## 🛠️ Tecnologias Utilizadas
+- **Frontend:** HTML5, CSS3, JavaScript (Vanilla).
+- **Backend:** Node.js, [Express.js / n8n - ajuste conforme o uso].
 
-BASE CRIADO COM A AJUDA DA I.A PARA ORGANIZAR AS IDEIAS PARA SIMPLIFICAR E TAMBÉM PARA QUALQUER PESSOAL CONSIGA MANIPULAR O CONDIGO E ADAPTADAR PARA SUA EMPRESA.
+## ⚙️ Como executar o projeto
+
+### Pré-requisitos
+- [Node.js](https://nodejs.org/) instalado na máquina.
+
+### Backend
+1. Navegue até a pasta do backend: `cd backend`
+2. Instale as dependências: `npm install`
+3. Crie um arquivo `.env` na raiz do backend baseado nas suas credenciais (não envie este arquivo para o repositório).
+4. Inicie o servidor: `npm start` (ou `node src/server.js`)
+
+### Frontend
+1. Navegue até a pasta do frontend: `cd frontend/public`
+2. Abra o arquivo `index.html` no seu navegador ou utilize uma extensão como o *Live Server* no VS Code.
+
+## 🔒 Variáveis de Ambiente
+Certifique-se de configurar as seguintes variáveis no arquivo `.env` do backend:
+```env
+PORT=3000
+DB_PASS=[sua_senha]
+WEBHOOK_URL=[url_do_n8n]
