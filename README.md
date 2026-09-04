@@ -84,6 +84,11 @@ O código do CHIP (em destaque azul).
 
 O nome da INDÚSTRIA.
 
+
+
+
+Pegando a base e atualizando
+
 4. Detalhes no Hover (Tooltip)
 Hover via CSS: Cada dia agendado gera um elemento oculto .tooltip.
 
